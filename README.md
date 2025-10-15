@@ -1,30 +1,64 @@
-# call-1t's Business & Investing Growth Tracker
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Checklist</title>
+  <style>
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #111;
+    }
+    .checklist {
+      background: #fff;
+      border-radius: 16px;
+      padding: 25px 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 600px;
+    }
+    .item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    input[type="checkbox"] {
+      margin-right: 12px;
+      transform: scale(1.3);
+      cursor: pointer;
+    }
+    label {
+      flex: 1;
+      line-height: 1.5;
+    }
+    .time {
+      display: block;
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Checklist</h1>
 
-This is a simple React-based interactive checklist that saves progress locally in your browser.
-
-## How to publish on GitHub Pages
-
-1. Create a new repository on GitHub named `checklist`:
-   - Go to https://github.com/new and set **Repository name** to `checklist`.
-   - Leave it public (or private if you prefer).
-
-2. Upload the **contents** of this folder to the repository (drag & drop files in the GitHub web UI).
-
-3. In your repository, go to **Settings → Pages** (or `Settings → Code and automation → Pages`).
-   - Under **Build and deployment**, set **Branch** to `main` and folder to `/ (root)` (if asked).
-   - If GitHub asks to save, confirm and wait a minute or two.
-
-4. Your site will be available at:
-   `https://call-1t.github.io/checklist` (or similar; GitHub shows the exact link).
-
-> Note: This project uses React from a CDN and Babel in the browser so **no build step** is required — just upload the files and enable Pages. If you ever want a build-based React project (with Vite), tell me and I can prepare that too.
-
-## Local use
-
-You can also open `index.html` directly in your browser (double-click the file). Progress will be saved in your browser's local storage.
-
-## About
-
-- Progress is saved locally; if you clear browser data you'll lose progress. Use Export to back up your JSON file.
-
-Enjoy! 🚀
+  <div class="checklist" id="checklist">
+    <div class="item">
+      <input type="checkbox" id="learn-basics" />
+      <label for="learn-basics">
+        Learn basics of investing and trading
+        <span class="time">~2–4 weeks</span>
+      </label>
+    </div>
+    <div class="item">
+      <input type="checkbox" id="open-demo" />

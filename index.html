@@ -1,89 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Business & Investing Checklist</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist</title>
   <style>
     body {
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
-      color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
       display: flex;
       justify-content: center;
       align-items: flex-start;
       min-height: 100vh;
       margin: 0;
-      padding: 40px 20px;
+      padding: 40px;
     }
-
     .container {
-      background: #292929;
-      border-radius: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       padding: 30px;
       width: 100%;
       max-width: 500px;
-      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
     }
-
     h1 {
       text-align: center;
-      margin-bottom: 25px;
-      color: #00c896;
-      font-size: 1.8rem;
+      color: #333;
     }
-
-    .checklist {
+    ul {
       list-style: none;
       padding: 0;
     }
-
-    .checklist li {
-      background: #1e1e1e;
-      margin: 10px 0;
-      padding: 15px 12px;
-      border-radius: 12px;
+    li {
+      margin: 12px 0;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      transition: all 0.2s ease;
+      font-size: 16px;
+      color: #555;
     }
-
-    .checklist li:hover {
-      background: #242424;
-    }
-
     input[type="checkbox"] {
+      margin-right: 10px;
       transform: scale(1.3);
-      accent-color: #00c896;
     }
-
-    label {
-      margin-left: 10px;
-      flex: 1;
-    }
-
     footer {
       text-align: center;
       font-size: 0.85rem;
+      color: #777;
       margin-top: 25px;
-      opacity: 0.7;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Business & Investing Checklist</h1>
-    <ul class="checklist">
-      <li><label><input type="checkbox" /> Research how dropshipping works</label></li>
-      <li><label><input type="checkbox" /> Learn stock trading basics (Investopedia)</label></li>
-      <li><label><input type="checkbox" /> Watch 3 beginner finance videos</label></li>
-      <li><label><input type="checkbox" /> Understand profit vs. revenue</label></li>
-      <li><label><input type="checkbox" /> Make a mock store plan</label></li>
-      <li><label><input type="checkbox" /> Learn market trends</label></li>
-      <li><label><input type="checkbox" /> Save $50 for first investment</label></li>
+    <ul>
+      <li><input type="checkbox"> Research how dropshipping works</li>
+      <li><input type="checkbox"> Learn stock trading basics (Investopedia)</li>
+      <li><input type="checkbox"> Watch 3 beginner finance videos</li>
+      <li><input type="checkbox"> Understand profit vs. revenue</li>
+      <li><input type="checkbox"> Make a mock store plan</li>
+      <li><input type="checkbox"> Learn market trends</li>
+      <li><input type="checkbox"> Save $50 for first investment</li>
     </ul>
-    <footer>Created by call-1t • Updated 2025</footer>
+    <footer>Created by call-1t • 2025</footer>
   </div>
 </body>
 </html>

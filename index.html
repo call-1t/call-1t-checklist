@@ -1,261 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>call-1t's Business & Investing Growth Tracker</title>
-  <meta name="description" content="Interactive checklist to learn business, dropshipping, and investing. Progress saved locally."/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Business & Investing Checklist</title>
   <style>
-    /* Simple clean white & green style */
-    :root{--bg:#f8fafb;--card:#ffffff;--muted:#6b7280;--accent:#10b981}
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:linear-gradient(180deg,#fff 0%,var(--bg) 100%); margin:0; padding:24px; color:#0f172a;}
-    .container{max-width:980px;margin:0 auto;}
-    header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-    h1{margin:0;font-size:24px}
-    p.lead{margin:6px 0 0;color:var(--muted);font-size:13px}
-    .card{background:var(--card);border-radius:14px;padding:16px;box-shadow:0 4px 14px rgba(2,6,23,0.04);margin-top:16px;}
-    .progress{height:12px;background:#f1f5f9;border-radius:999px;overflow:hidden}
-    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#059669);width:0%;}
-    .section{margin-top:18px}
-    .section h2{margin:0 0 6px 0;font-size:16px}
-    label.item{display:flex;gap:10px;align-items:flex-start;padding:8px;border-radius:8px;cursor:pointer}
-    label.item:hover{background:#f8fafc}
-    .item-text{font-size:14px}
-    textarea.notes{width:100%;min-height:70px;margin-top:8px;padding:8px;border-radius:8px;border:1px solid #e6edf3}
-    .controls{display:flex;gap:8px;align-items:center}
-    button{background:#ecfeff;border:none;padding:8px 10px;border-radius:8px;cursor:pointer}
-    button.primary{background:var(--accent);color:white}
-    .small{font-size:13px;color:var(--muted)}
-    .right{margin-left:auto;text-align:right;font-size:13px;color:var(--muted)}
-    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
-    @media(min-width:700px){h1{font-size:28px}}
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
+      color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background: #292929;
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #00c896;
+      font-size: 1.8rem;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist li {
+      background: #1e1e1e;
+      margin: 10px 0;
+      padding: 15px 12px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .checklist li:hover {
+      background: #242424;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.3);
+      accent-color: #00c896;
+    }
+
+    label {
+      margin-left: 10px;
+      flex: 1;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 25px;
+      opacity: 0.7;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <div>
-        <h1>call-1t's Business & Investing Growth Tracker</h1>
-        <p class="lead">Interactive checklist — progress saved locally on this device.</p>
-      </div>
-      <div class="controls">
-        <button id="exportBtn">Export</button>
-        <button id="resetBtn">Reset</button>
-      </div>
-    </header>
-
-    <div class="card">
-      <div style="display:flex;gap:14px;align-items:center">
-        <div style="flex:1">
-          <div class="small">Overall Progress</div>
-          <div class="progress" style="margin-top:8px">
-            <i id="progressBar"></i>
-          </div>
-          <div id="progressText" class="small" style="margin-top:8px">0% — 0 of 0 done</div>
-        </div>
-        <div class="right small">Last saved: Local device</div>
-      </div>
-
-      <main id="sectionsRoot"></main>
-    </div>
-
-    <footer>Tip: This site saves progress locally. If you clear browser data it'll be lost — use Export to backup.</footer>
+    <h1>Business & Investing Checklist</h1>
+    <ul class="checklist">
+      <li><label><input type="checkbox" /> Research how dropshipping works</label></li>
+      <li><label><input type="checkbox" /> Learn stock trading basics (Investopedia)</label></li>
+      <li><label><input type="checkbox" /> Watch 3 beginner finance videos</label></li>
+      <li><label><input type="checkbox" /> Understand profit vs. revenue</label></li>
+      <li><label><input type="checkbox" /> Make a mock store plan</label></li>
+      <li><label><input type="checkbox" /> Learn market trends</label></li>
+      <li><label><input type="checkbox" /> Save $50 for first investment</label></li>
+    </ul>
+    <footer>Created by call-1t • Updated 2025</footer>
   </div>
-
-  <!-- React + Babel from CDN (no build step). This is a simple React app using JSX compiled in the browser.
-       Works with GitHub Pages (static) and is easy to upload. -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-  <script type="text/babel">
-  const { useState, useEffect } = React;
-  const STORAGE_KEY = 'call1t_checklist_v1';
-
-  const DEFAULT = {
-    title: "call-1t's Business & Investing Growth Tracker",
-    sections: [
-      {
-        id: 'phase1',
-        title: 'Phase 1 — Learn the Money Language',
-        subtitle: 'Goal: Understand how money moves',
-        items: [
-          'Learn what stocks, investing, and markets are (Investopedia / YouTube)',
-          'Understand compound interest and diversification',
-          'Learn basic finance terms: dividend, profit, risk, return',
-          'Try a free stock market simulator (no real money)',
-          'Follow or read about one real company each week'
-        ],
-        notes: ''
-      },
-      {
-        id: 'phase2',
-        title: 'Phase 2 — Build Business Skills',
-        subtitle: 'Goal: Understand how online business works',
-        items: [
-          'Watch videos explaining dropshipping and e-commerce models',
-          'Learn how to calculate profit margins (income - expenses)',
-          'Practice making logos and ads using Canva or Photopea',
-          'Study basic marketing (what makes people buy things)',
-          'Create a mock online store plan on paper'
-        ],
-        notes: ''
-      },
-      {
-        id: 'phase3',
-        title: 'Phase 3 — Personal Finance & Mindset',
-        subtitle: 'Goal: Learn how to manage money smartly',
-        items: [
-          'Practice writing a monthly budget (income vs. expenses)',
-          'Learn what saving, interest, and credit mean',
-          'Study emotional control in investing — patience, not panic',
-          'Read stories about successful investors and habits',
-          'Write down your financial goals (short & long-term)'
-        ],
-        notes: ''
-      },
-      {
-        id: 'phase4',
-        title: 'Phase 4 — Real-World Practice',
-        subtitle: 'Goal: Apply your learning safely',
-        items: [
-          'Open a custodial account with parent/guardian help (if possible)',
-          'Use part-time income to test budgeting and saving',
-          'Help a club or family project with marketing or finance',
-          'Keep a small finance journal — record weekly learnings',
-          'Learn how taxes and interest work for later'
-        ],
-        notes: ''
-      },
-      {
-        id: 'phase5',
-        title: 'Phase 5 — Expansion & Independence',
-        subtitle: 'Goal: Use your skills for real income',
-        items: [
-          'Launch a small online project (store, service, or brand)',
-          'Reinvest profits wisely — save or invest long-term',
-          'Study finance news weekly (short summaries)',
-          'Explore long-term investing (index funds, ETFs)',
-          'Teach or explain what you\'ve learned to someone else'
-        ],
-        notes: ''
-      }
-    ]
-  };
-
-  function App() {
-    const [data, setData] = useState(() => {
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (raw) return JSON.parse(raw);
-      } catch(e){}
-      // initialize with done flags
-      const copy = structuredClone(DEFAULT);
-      copy.sections = copy.sections.map(s => ({...s, items: s.items.map(lbl => ({label: lbl, done:false}))}));
-      return copy;
-    });
-
-    useEffect(() => {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-      updateProgressUI(data);
-    }, [data]);
-
-    useEffect(() => updateProgressUI(data), []);
-
-    function toggleItem(sIdx, iIdx){
-      setData(d => {
-        const copy = structuredClone(d);
-        copy.sections[sIdx].items[iIdx].done = !copy.sections[sIdx].items[iIdx].done;
-        return copy;
-      });
-    }
-
-    function setNotes(sIdx, txt){
-      setData(d => {
-        const copy = structuredClone(d);
-        copy.sections[sIdx].notes = txt;
-        return copy;
-      });
-    }
-
-    function resetAll(){
-      if(!confirm('Reset all progress? This cannot be undone.')) return;
-      const fresh = structuredClone(DEFAULT);
-      fresh.sections = fresh.sections.map(s => ({...s, items: s.items.map(lbl => ({label: lbl, done:false}))}));
-      setData(fresh);
-    }
-
-    function exportJSON(){
-      const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'call-1t-checklist-progress.json';
-      a.click();
-      URL.revokeObjectURL(url);
-    }
-
-    // attach buttons to DOM outside React for convenience
-    useEffect(() => {
-      const eReset = document.getElementById('resetBtn');
-      const eExport = document.getElementById('exportBtn');
-      if(eReset) eReset.onclick = resetAll;
-      if(eExport) eExport.onclick = exportJSON;
-      return () => { if(eReset) eReset.onclick = null; if(eExport) eExport.onclick = null; };
-    }, [data]);
-
-    return (
-      React.createElement(React.Fragment, null,
-        data.sections.map((section, sIdx) =>
-          React.createElement('section', {key:section.id, className:'section card', style:{marginTop:16}},
-            React.createElement('div', {style:{display:'flex',justifyContent:'space-between',alignItems:'center'}},
-              React.createElement('div', null,
-                React.createElement('h2', null, section.title),
-                React.createElement('div', {className:'small', style:{marginTop:6}}, section.subtitle)
-              ),
-              React.createElement('div', {className:'small'}, `${section.items.filter(i=>i.done).length}/${section.items.length} done`)
-            ),
-            React.createElement('div', {style:{marginTop:10}},
-              section.items.map((item, iIdx) =>
-                React.createElement('label', {key:iIdx, className:'item'},
-                  React.createElement('input', {
-                    type:'checkbox',
-                    checked: item.done,
-                    onChange: ()=>toggleItem(sIdx, iIdx),
-                    style:{marginTop:4}
-                  }),
-                  React.createElement('div', {className: item.done ? 'item-text' : 'item-text'}, item.label)
-                )
-              )
-            ),
-            React.createElement('div', {style:{marginTop:8}},
-              React.createElement('label', {className:'small'}, 'Notes'),
-              React.createElement('textarea', {
-                className:'notes',
-                value: section.notes || '',
-                onChange: (e)=>setNotes(sIdx, e.target.value),
-                placeholder: 'Personal notes, observations, or next steps...'
-              })
-            )
-          )
-        )
-      )
-    );
-  }
-
-  // render into the non-react DOM node
-  const rootEl = document.getElementById('sectionsRoot');
-  ReactDOM.createRoot(rootEl).render(React.createElement(App));
-
-  function updateProgressUI(data){
-    const totals = data.sections.reduce((acc,s)=>{const done = s.items.filter(i=>i.done).length; acc.done+=done; acc.total+=s.items.length; return acc;},{done:0,total:0});
-    const percent = Math.round((totals.done / Math.max(1, totals.total)) * 100);
-    const bar = document.getElementById('progressBar');
-    const text = document.getElementById('progressText');
-    if(bar) bar.style.width = percent + '%';
-    if(text) text.textContent = `${percent}% — ${totals.done} of ${totals.total} done`;
-  }
-
-  </script>
 </body>
 </html>
